@@ -1,4 +1,5 @@
 node {
-  stage 'Run JMeter Test'
-  sh '/home/ubuntu/apache-jmeter-3.1/bin/jmeter.sh -n -t /home/ubuntu/other testjmx.jmx -l test.jtl'
+    git url: 'https://github.com/bhoomikathakkar/jmeter-keyword-driven-framwork'
+    def mvnHome = tool 'M3'
+    bat "${mvnHome}/bin/mvn -B verify"
 }
